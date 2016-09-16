@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+   .container   
+      h2 Edit Product Information of:  #{needsEdit.title}
+      br
+      form.form-horizontal(role='form',method='post')
+         .form-group
+            label.control-label.col-sm-1(for='title') Title:
+            .col-sm-2
+            input#title.form-control(type='text', name='title', data-name='title', value='#{needsEdit.title}') 
+         .form-group
+            label.control-label.col-sm-1(for='description') Description:
+            .col-sm-2
+            textarea#description.form-control(name='description', data-name='description') #{needsEdit.description}
+         .form-group
+            label.control-label.col-sm-1(for='price') Price:
+            .col-sm-2
+            input#price.form-control(type='text', name='price', data-name='price', value='#{needsEdit.price}')
+         .form-group
+            label.control-label.col-sm-1(for='category') Category:
+            .col-sm-2
+            input#price.form-control(type='text', name='category', data-name='category', value='#{needsEdit.category}')
+         .form-group
+            .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(class='pull-right', type='submit') Submit
+
+    

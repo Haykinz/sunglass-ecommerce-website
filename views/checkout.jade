@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    .container
+      h2 Shipping Address & Credit Card Information
+      br
+      form.form-horizontal(role='form',method='post')
+        .form-group
+          label.control-label.col-sm-2(for='name') Name:
+          .col-sm-10
+            input#name.form-control(type='text', name='name',data-name='name',required='true', placeholder='Enter full name')
+        .form-group
+          label.control-label.col-sm-2(for='address') Address:
+          .col-sm-10
+            input#address.form-control(type='text',name='address',data-name='address',required='true', placeholder='Enter Address')
+        .form-group
+          label.control-label.col-sm-2(for='city') City:
+          .col-sm-10
+            input#city.form-control(type='text',name='city',data-name='city',required='true', placeholder='Enter City')
+        .form-group
+          label.control-label.col-sm-2(for='state') State:
+          .col-sm-10
+            input#state.form-control(type='text',name='state',data-name='state',required='true', placeholder='Enter State')
+        .form-group
+          label.control-label.col-sm-2(for='zip') Zip:
+          .col-sm-10
+            input#zip.form-control(type='text',name='zip',data-name='zip',required='true', placeholder='Enter 5 digit Zip')
+        .form-group
+          label.control-label.col-sm-2(for='ccnumber') Credit Card Type:
+          .col-sm-10
+            input#name.form-control(type='text', name='cctype',data-name='cctype',required='true', placeholder='Type Master/Visa/Amex')
+        .form-group
+          label.control-label.col-sm-2(for='ccnumber') Credit Card Number:
+          .col-sm-10
+            input#name.form-control(type='text', name='ccnumber',data-name='ccnumber',required='true', placeholder='Enter your credit card no.')
+        .form-group
+          label.control-label.col-sm-2(for='ccname') Full Name:
+          .col-sm-10
+            input#address.form-control(type='text',name='ccname',data-name='ccname',required='true', placeholder='Enter Name on your Credit Card')
+        .form-group
+          label.control-label.col-sm-2(for='ccexpmonth') Expiration Month:
+          .col-sm-10
+            input#city.form-control(type='text',name='ccexpmonth',data-name='ccexpmonth',required='true', placeholder='Enter Expiration Month')
+        .form-group
+          label.control-label.col-sm-2(for='ccexpyear') Expiration Year:
+          .col-sm-10
+            input#state.form-control(type='text',name='ccexpyear',data-name='ccexpyear',required='true', placeholder='Enter Expiration year')
+        
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type='submit') Submit

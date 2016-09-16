@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    .container
+     h1 Cart List
+     br
+     if (cartlist)
+         each cartitem in cartlist
+            .container
+               .col-xs-3
+                   <img src="#{cartitem.imgpath}" class="img-rounded pull-xs-right" width="200" height="200">
+               .col-xs-9
+                  .row
+                     label.control-label.col-sm-2 Title:
+                     label.control-label.col-sm-10 #{cartitem.title}
+                  .row
+                     label.control-label.col-sm-2 Description:
+                     label.control-label.col-sm-2 #{cartitem.description}
+                  .row
+                     label.control-label.col-sm-2 Price:
+                     label.control-label.col-sm-2 #{cartitem.price} $
+                  .row
+                     label.control-label.col-sm-2 Category:
+                     label.control-label.col-sm-2 #{cartitem.category}
+                  .row
+                     label.control-label.col-sm-2 Qty:
+                     label.control-label.col-sm-2 #{cartitem.qty}
+                  .row
+                     .col-sm-3
+                        a.btn.btn-info.col-sm-9(href='/cart/#{cartitem._id}/delete', role='button') Delete from Cart
+                   hr
+      else
+        h2 No Products in the database.
+      .container
+            .row
+                .col-md-12
+                     a.btn.btn-info.col-sm-3(class='btn pull-right', href='/checkout', role='button') Checkout
+      .container
+        br
+        br
+        br
+            

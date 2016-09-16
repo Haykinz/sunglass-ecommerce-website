@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    .container
+     h1 Product List
+     br
+     if (productlist)
+         each product in productlist
+            .container
+               .col-xs-3
+                   <img src="#{product.imgpath}" class="img-rounded pull-xs-right" width="200" height="200">
+               .col-xs-9
+                  .row
+                     label.control-label.col-sm-2 Title:
+                     label.control-label.col-sm-10 #{product.title}
+                  .row
+                     label.control-label.col-sm-2 Description:
+                     label.control-label.col-sm-2 #{product.description}
+                  .row
+                     label.control-label.col-sm-2 Price:
+                     label.control-label.col-sm-2 #{product.price} $
+                  .row
+                     label.control-label.col-sm-2 Category:
+                     label.control-label.col-sm-2 #{product.category}
+                  .row
+                     .col-md-6
+                     a.btn.btn-info.col-sm-3(href='/listproducts/#{product._id}/addtocart', role='button') Add to Cart
+                   hr
+                
+      else
+        h2 No Products in the database.
+
+    
